@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Little World ✨</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="game">
+    <canvas id="world"></canvas>
+    <header class="topbar">
+      <div><div class="eyebrow">A LITTLE ADVENTURE</div><h1>Our Little World ✨</h1></div>
+      <div class="progress-wrap"><div class="progress-label"><span>Journey progress</span><strong id="progressText">0 / 15</strong></div><div class="progress-track"><div id="progressBar"></div></div></div>
+    </header>
+    <aside class="help-card"><strong>How to explore</strong><span>W A S D / Arrow keys to move</span><span>Walk near a glowing marker and press <kbd>E</kbd></span><span>Drag to look around · Scroll to zoom</span></aside>
+    <div class="level-pill" id="levelPill">LEVEL 1 · THE MEADOW</div>
+    <div class="interaction" id="interaction" hidden><span id="interactionText">Press E to begin</span><kbd>E</kbd></div>
+
+    <section class="modal" id="taskModal" hidden>
+      <div class="modal-card wide-card">
+        <button class="close" id="closeTask" aria-label="Close">×</button>
+        <div class="eyebrow" id="taskKicker">LEVEL 1</div><h2 id="taskTitle">A tiny task</h2>
+        <p id="taskDescription"></p>
+        <div class="task-content" id="taskContent"></div>
+        <div class="task-footer"><span id="taskFeedback" aria-live="polite"></span><button class="primary" id="taskAction">Start task</button></div>
+      </div>
+    </section>
+
+    <section class="modal" id="surpriseModal" hidden>
+      <div class="modal-card surprise-card"><div class="sparkle">✦ ✧ ✦</div><div class="eyebrow">YOU MADE IT TO THE END</div>
+        <h2>A little surprise for you 💖</h2><p id="surpriseMessage"></p><div class="big-heart">♥</div>
+        <button class="primary" id="closeSurprise">Explore our world again</button>
+      </div>
+    </section>
+    <div class="toast" id="toast" role="status"></div><div class="crosshair">+</div>
+  </div>
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js"}}
+  </script>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
