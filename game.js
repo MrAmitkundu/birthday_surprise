@@ -371,7 +371,29 @@ function showFinalCodeMessage() {
         layer.style.cssText = "position:fixed;inset:0;z-index:900;display:flex;align-items:center;justify-content:center;padding:18px;background:#1b1026d9;color:#fff;font-family:system-ui,sans-serif";
         document.body.appendChild(layer);
     }
-    layer.innerHTML = `<div style="width:min(470px,100%);padding:30px 24px;border-radius:24px;text-align:center;background:linear-gradient(145deg,#492c50,#24172e);border:1px solid #ffd3e7a0;box-shadow:0 22px 70px #0008"><div style="font-size:54px">🎉🔑💌</div><h2 style="color:#ffd7e7;margin:10px 0">All 13 keys inserted!</h2><p style="line-height:1.7">You unlocked Level 14! The secret PIN code for the world treasure chest has been revealed. Go find the chest in the world and enter this PIN to open it.</p><div style="margin:18px auto;padding:14px;border-radius:14px;background:#ffffff15;border:1px dashed #ffe08a"><div style="font-size:12px;letter-spacing:2px;color:#f7d9e8">WORLD CHEST PIN CODE</div><div style="font-size:38px;font-weight:900;letter-spacing:9px;color:#ffe08a;margin-top:6px">2345</div></div><button id="finalCodeContinue" style="border:0;border-radius:13px;padding:12px 24px;background:linear-gradient(90deg,#ff8ab7,#ffd778);color:#28182c;font-weight:800;cursor:pointer">Find the chest 💖</button></div>`;
+    layer.innerHTML = `<div style="width:min(470px,100%);padding:30px 24px;border-radius:24px;text-align:center;background:linear-gradient(145deg,#492c50,#24172e);border:1px solid #ffd3e7a0;box-shadow:0 22px 70px #0008;max-height:90vh;overflow-y:auto">
+        <div style="font-size:54px">🎉🔑💌</div>
+        <h2 style="color:#ffd7e7;margin:10px 0">All 13 keys inserted!</h2>
+        <p style="line-height:1.7">You unlocked Level 14! The secret PIN code for the world treasure chest has been revealed. Go find the chest in the world and enter this PIN to open it.</p>
+        
+        <!-- Secret Letter Section -->
+        <div style="margin:20px 0;padding:16px;border-radius:16px;background:#00000030;border:1px solid #ffd7e750;text-align:left;font-size:14px;line-height:1.6;color:#ffe3f0">
+            <div style="font-weight:bold;font-size:15px;color:#ffd778;margin-bottom:8px;text-align:center">✉️ A Secret Letter for You</div>
+            <p style="margin:0 0 10px 0">Before you unlock the final chest, please go to the link below and watch the video.</p>
+            <p style="margin:0 0 12px 0;padding:8px 12px;background:#ff4d7930;border-left:3px solid #ff4d79;border-radius:4px;font-size:13px">
+                ⚠️ <strong>Important Instructions:</strong> Before watching the video, please <strong>be completely alone</strong> and <strong>use headphones</strong>. Do not share this video with others and do not watch it with another person!
+            </p>
+            <div style="text-align:center">
+                <a href="https://your-link-here.com" target="_blank" style="display:inline-block;padding:10px 18px;background:#ff8ab7;color:#28182c;text-decoration:none;font-weight:bold;border-radius:8px">▶ Watch the Secret Video First</a>
+            </div>
+        </div>
+
+        <div style="margin:18px auto;padding:14px;border-radius:14px;background:#ffffff15;border:1px dashed #ffe08a">
+            <div style="font-size:12px;letter-spacing:2px;color:#f7d9e8">WORLD CHEST PIN CODE</div>
+            <div style="font-size:38px;font-weight:900;letter-spacing:9px;color:#ffe08a;margin-top:6px">2345</div>
+        </div>
+        <button id="finalCodeContinue" style="border:0;border-radius:13px;padding:12px 24px;background:linear-gradient(90deg,#ff8ab7,#ffd778);color:#28182c;font-weight:800;cursor:pointer">Find the chest 💖</button>
+    </div>`;
     layer.style.display = "flex";
     modalOpen = true;
     layer.querySelector("#finalCodeContinue").onclick = () => { layer.style.display = "none"; modalOpen = false; showToast("Now locate the chest in the world and use PIN 2345! 🏡"); };
@@ -851,7 +873,7 @@ function buildEmoji(c) {
 }
 
 function buildPromises(c) {
-    const choices = ["Make 3 promises to me 👂", "Bina karon e Jhogra Korbo na  🕯️", "Sob Somoy valobasbo 💘", "Khusnuti korbo but kosto debo na  🤍", "Sob somoy valo valo ranna kore khaoabo 🥳", "Sob somoy tomar kotha mane cholbo  💞"];
+    const choices = ["All time message kore debo 👂", "Bina karon e Jhogra Korbo na  🕯️", "Sob Somoy valobasbo 💘", "Khusnuti korbo but kosto debo na  🤍", "Sob somoy valo valo ranna kore khaoabo 🥳", "Sob somoy tomar kotha mane cholbo  💞"];
     c.innerHTML = `<p>Pick exactly <strong>three</strong> little promises. These are sweet reminders, not pressure or a test.</p><div class="promise-list">${choices.map((x, i) => `<label class="promise-choice"><input type="checkbox" value="${i}"> ${x}</label>`).join("")}</div><div class="mini-status" id="promiseCount">0 / 3 selected</div>`;
 
     c.querySelectorAll('input[type="checkbox"]').forEach(box => box.addEventListener('change', () => {
