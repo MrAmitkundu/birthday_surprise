@@ -384,7 +384,7 @@ function showFinalCodeMessage() {
                 ⚠️ <strong>Important Instructions:</strong> Before watching the video, please <strong>be completely alone</strong> and <strong>use headphones</strong>. Do not share this video with others and do not watch it with another person!
             </p>
             <div style="text-align:center">
-                <a href="https://your-link-here.com" target="_blank" style="display:inline-block;padding:10px 18px;background:#ff8ab7;color:#28182c;text-decoration:none;font-weight:bold;border-radius:8px">▶ Watch the Secret Video First</a>
+                <a href="https://youtu.be/lFaW86G9SgI" target="_blank" style="display:inline-block;padding:10px 18px;background:#ff8ab7;color:#28182c;text-decoration:none;font-weight:bold;border-radius:8px">▶ Watch the Secret Video First</a>
             </div>
         </div>
 
